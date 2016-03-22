@@ -3,9 +3,6 @@ This repository houses the source code from Jarvis et al., (2015)
 Phylogenomic analyses data of the avian phylogenomics project. 
 GigaScience 4:4 http://gigascience.biomedcentral.com/articles/10.1186/s13742-014-0038-1
 
-## Files
------
-
 ### namemap
 
 | File            | Function                                                            |
