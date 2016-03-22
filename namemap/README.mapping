@@ -1,0 +1,32 @@
+Script
+=========================
+For going from short names to long names, you need to use -rev option. Please run the mapsequences.py script with no arguments to see a brief help message. 
+
+
+Mapping File
+=========================
+The mapping file (names.csv) provides mappings from short names to long names. 
+
+
+There are two cases of duplicates in the mapping file. These are in the mapping file intentionally.
+
+For example, we have: 
+
+ANTCA Antrostomus_carolinensis_<Chuck-will's-widow_(Nightjar)>
+CAPCA Antrostomus_carolinensis_<Chuck-will's-widow_(Nightjar)>
+
+This is because originally we were using a different name for Nightjar, one that abbreviated to CAPCA.
+Consequently, our older data has CAPCA as the short species name for Nightjar. 
+But it was observed that the names should be updated for Nightjar. 
+So, in the mapping file, we simply mapped CAPCA (the old abbreviation) to the new name, and added another entry for mapping from ANTCA (corrected abbreviated name) to the new name. So regardless of which one of these two short names is in the tree, my mapping script will change it to Antrostomus_carolinensis_<Chuck-will's-widow_(Nightjar)>.
+
+Similarly, we have:
+
+TINMA Tinamou_guttatus_<White-throated_tinamou>
+TINGU Tinamou_guttatus_<White-throated_tinamou>
+
+This was mix-up at the very beginning. We thought we had Tinamu Major, but it turned out we had Tinamou Guttatus.
+We have a mapping from TINMA to Tinamout guttatus to fix that problem. 
+So, in alignments and trees we have TINMA (which is a legacy error), but we map TINMA to the corrected long name, which is Tinamout guttatus.  
+
+A similar situation happened for Chlamydotis macqueenii.

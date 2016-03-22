@@ -1,0 +1,32 @@
+macro=;
+if ( !argnumber )
+errmsg
+This script gives the retention
+indices of the synapomorphies for
+each node of a specified tree.
+You need to specify the tree.
+Adapted from apocis.run ;
+end
+lquote [ ;
+var: mat[ (2*root) ] ccons damin damax ;
+ttag - ;
+naked - ;
+tplot %1 ;
+report - ;
+silent = con buffer ;
+silent - file ;
+log %2 ;
+loop 0 nchar
+   progress #1 nchar working... ;
+   set damin minsteps [ #1 ] ;
+   set damax maxsteps [ #1 ] ;
+   if ( !'damin' )
+      quote CHAR. #1 is uninformative;
+      continue ; end
+   set mat states [ #1 . %1 ] ; /****  store state sets ****/
+   set ccons  ('damax' - length [ %1 #1 ] )/('damax' - 'damin') ; /**** store RI's ****/
+   quote Char. #1: RI '/.3ccons'
+   stop
+progress/;
+log/;
+proc/;
